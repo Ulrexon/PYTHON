@@ -5,15 +5,6 @@ from twilio.rest import Client
 def create_app():
     app = Flask(__name__)
 
-    # Determinar el entorno
-    env = os.getenv('FLASK_ENV', 'local')
-    if env == 'development':
-        app.config.from_object('config.development.Config')
-    elif env == 'production':
-        app.config.from_object('config.production.Config')
-    else:
-        app.config.from_object('config.local.Config')
-
     # Configurar las credenciales de Twilio
     account_sid = app.config['ACCOUNT_SID']
     auth_token = app.config['AUTH_TOKEN']
