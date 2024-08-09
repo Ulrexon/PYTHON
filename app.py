@@ -5,11 +5,6 @@ from twilio.rest import Client
 def create_app():
     app = Flask(__name__)
 
-    # Configurar las credenciales de Twilio
-    account_sid = app.config['ACCOUNT_SID']
-    auth_token = app.config['AUTH_TOKEN']
-    client = Client(account_sid, auth_token)
-
     # Ruta básica para verificar que el servidor esté funcionando
     @app.route('/')
     def index():
