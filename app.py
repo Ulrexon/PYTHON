@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from twilio.rest import Client
 
 def create_app():
@@ -12,15 +12,18 @@ def create_app():
 
     # Función para verificar si es el primer mensaje del usuario
     def is_first_message(from_number):
-        # Aquí debes implementar la lógica para verificar si es el primer mensaje
-        # Podrías usar una base de datos para guardar los números y sus mensajes
-        pass
+        # Implementación básica que utiliza una variable en memoria.
+        # En producción, deberías usar una base de datos.
+        # Este ejemplo asume que es siempre el primer mensaje para fines demostrativos.
+        # Debes reemplazar esto con una lógica real que verifique una base de datos.
+        return True
 
     # Función para obtener la respuesta del chatbot
     def get_chatbot_response(message):
-        # Aquí debes implementar la lógica para obtener la respuesta de tu chatbot
-        # Podrías llamar a tu chatbot y pasarle el mensaje para obtener la respuesta
-        pass
+        # Implementación básica que devuelve una respuesta estática.
+        # Aquí es donde integrarías tu lógica de chatbot real.
+        return f"Echo: {message}"
+
 
     return app
 
